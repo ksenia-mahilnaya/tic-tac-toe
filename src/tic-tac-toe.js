@@ -11,11 +11,10 @@ class TicTacToe {
             this.matrix[i][j] = null;
          }
         }
-
     }
 
     getCurrentPlayerSymbol() {
-      return this.currentValue;
+        return this.currentValue;
     }
 
     nextTurn(rowIndex, columnIndex) {
@@ -39,11 +38,10 @@ class TicTacToe {
 
     isFinished() {
 
-      if ((this.getWinner() !== null) || (this.isDraw())) {
+        if ((this.getWinner() !== null) || (this.isDraw())) {
           return true;
-      }
-    return false;
-
+        }
+        return false;
     }
 
     getWinner() {
@@ -81,42 +79,43 @@ class TicTacToe {
     }
 
     noMoreTurns() {
-      loop:
-      for (var i = 0; i < 3; i++) {
-        for (var j = 0; j < 3; j++) {
+        loop:
+        for (var i = 0; i < 3; i++) {
+          for (var j = 0; j < 3; j++) {
 
-          if (this.matrix[i][j] === null ) {
+            if (this.matrix[i][j] === null ) {
 
-            return false;
-            break loop;
+              return false;
+              break loop;
+            }
           }
-       }
+        }
+        return true;
       }
-    return true;
-    }
 
     isDraw() {
-      var noEmptyCells = true;
+        var noEmptyCells = true;
 
-      for (var i = 0; i < 3; i++) {
-        for (var j = 0; j < 3; j++) {
-          if (this.matrix[i][j] === null) {
-              noEmptyCells = false;
-              break;
+        for (var i = 0; i < 3; i++) {
+          for (var j = 0; j < 3; j++) {
+            if (this.matrix[i][j] === null) {
+                noEmptyCells = false;
+                break;
+              }
+            }
           }
-       }
-      }
 
         if ((this.getWinner() === null) && (noEmptyCells)) {
             return true;
         }
-      return false;
+        return false;
     }
 
     getFieldValue(rowIndex, colIndex) {
-      this.rowIndex = rowIndex;
-      this.columnIndex = colIndex;
-          return this.matrix[this.rowIndex][this.columnIndex];
+        this.rowIndex = rowIndex;
+        this.columnIndex = colIndex;
+
+        return this.matrix[this.rowIndex][this.columnIndex];
     }
 
 }
