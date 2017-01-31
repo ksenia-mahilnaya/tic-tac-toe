@@ -7,9 +7,9 @@ class TicTacToe {
         this.matrix = new Array();
         for (var i = 0; i < 3; i++) {
           this.matrix[i] = new Array();
-          for (var j = 0; j < 3; j++) {
-            this.matrix[i][j] = null;
-         }
+            for (var j = 0; j < 3; j++) {
+              this.matrix[i][j] = null;
+            }
         }
     }
 
